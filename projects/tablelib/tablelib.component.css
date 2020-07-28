@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+    border-collapse : collapse;
+  }
+  input{
+    width : 200px;
+  }
+  .htmlcode{
+    color: blanchedalmond;
+}
+.css{
+    color: blanchedalmond;
+}
+.ts{
+    color: blanchedalmond;
+}
