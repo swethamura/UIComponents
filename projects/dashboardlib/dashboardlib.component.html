@@ -1,0 +1,97 @@
+<table>
+<tr><td style="font-size:30px;padding-top:30px;padding-bottom:30px;">
+<button mat-fab><fa-icon [icon]="user"></fa-icon></button>
+Welcome Swethamura</td></tr>
+<tr class="content"><td style="padding-bottom:20px;"><input type="text" placeholder="search" style="font-size:24px"></td><fa-icon [icon]="search" style="color:white"></fa-icon></tr>
+<tr class="content"><td><fa-icon [icon]="home"></fa-icon>Dashboard</td></tr>
+<tr class="content"><td><fa-icon [icon]="anchor"></fa-icon>Component</td><fa-icon [icon]="left"></fa-icon></tr>
+<tr class="content"><td><fa-icon [icon]="widget"></fa-icon>Widget</td><fa-icon [icon]="left"></fa-icon></tr>
+<tr class="content"><td><fa-icon [icon]="table"></fa-icon>Tables</td><fa-icon [icon]="left"></fa-icon></tr>
+<tr class="content"><td><fa-icon [icon]="chart"></fa-icon>Charts</td><fa-icon [icon]="left"></fa-icon></tr>
+<tr class="content"><td><fa-icon [icon]="user"></fa-icon>Users</td><fa-icon [icon]="left"></fa-icon></tr>
+<tr class="content"><td><fa-icon [icon]="calendar"></fa-icon>Calendar</td><span matBadge="2" matBadgeOverlap="false"></span></tr>
+<tr class="content"><td><fa-icon [icon]="image"></fa-icon>Gallery</td><fa-icon [icon]="left"></fa-icon></tr>
+<tr class="content"><td><fa-icon [icon]="mail"></fa-icon>Email</td><fa-icon [icon]="left"></fa-icon></tr>
+<tr class="content"><td><fa-icon [icon]="map"></fa-icon>Maps</td><fa-icon [icon]="left"></fa-icon></tr>
+</table>
+
+
+<lib-codedisplay>
+<pre class="htmlcode">
+<code>
+&lt;table&gt;
+&lt;tr&gt;&lt;td style="font-size:30px;padding-top:30px;padding-bottom:30px;"&gt;
+&lt;button mat-fab&gt;&lt;fa-icon [icon]="user"&gt;&lt;/fa-icon&gt;&lt;/button&gt;
+Welcome Swethamura&lt;/td&gt;&lt;/tr&gt;
+&lt;tr class="content"&gt;&lt;td style="padding-bottom:20px;"&gt;&lt;input type="text" placeholder="search" style="font-size:24px"&gt;&lt;/td&gt;&lt;fa-icon [icon]="search" style="color:white"&gt;&lt;/fa-icon&gt;&lt;/tr&gt;
+&lt;tr class="content"&gt;&lt;td&gt;&lt;fa-icon [icon]="home"&gt;&lt;/fa-icon&gt;Dashboard&lt;/td&gt;&lt;/tr&gt;
+&lt;tr class="content"&gt;&lt;td&gt;&lt;fa-icon [icon]="anchor"&gt;&lt;/fa-icon&gt;Component&lt;/td&gt;&lt;fa-icon [icon]="left"&gt;&lt;/fa-icon&gt;&lt;/tr&gt;
+&lt;tr class="content"&gt;&lt;td&gt;&lt;fa-icon [icon]="widget"&gt;&lt;/fa-icon&gt;Widget&lt;/td&gt;&lt;fa-icon [icon]="left"&gt;&lt;/fa-icon&gt;&lt;/tr&gt;
+&lt;tr class="content"&gt;&lt;td&gt;&lt;fa-icon [icon]="table"&gt;&lt;/fa-icon&gt;Tables&lt;/td&gt;&lt;fa-icon [icon]="left"&gt;&lt;/fa-icon&gt;&lt;/tr&gt;
+&lt;tr class="content"&gt;&lt;td&gt;&lt;fa-icon [icon]="chart"&gt;&lt;/fa-icon&gt;Charts&lt;/td&gt;&lt;fa-icon [icon]="left"&gt;&lt;/fa-icon&gt;&lt;/tr&gt;
+&lt;tr class="content"&gt;&lt;td&gt;&lt;fa-icon [icon]="user"&gt;&lt;/fa-icon&gt;Users&lt;/td&gt;&lt;fa-icon [icon]="left"&gt;&lt;/fa-icon&gt;&lt;/tr&gt;
+&lt;tr class="content"&gt;&lt;td&gt;&lt;fa-icon [icon]="calendar"&gt;&lt;/fa-icon&gt;Calendar&lt;/td&gt;&lt;span matBadge="2" matBadgeOverlap="false"&gt;&lt;/span&gt;&lt;/tr&gt;
+&lt;tr class="content"&gt;&lt;td&gt;&lt;fa-icon [icon]="image"&gt;&lt;/fa-icon&gt;Gallery&lt;/td&gt;&lt;fa-icon [icon]="left"&gt;&lt;/fa-icon&gt;&lt;/tr&gt;
+&lt;tr class="content"&gt;&lt;td&gt;&lt;fa-icon [icon]="mail"&gt;&lt;/fa-icon&gt;Email&lt;/td&gt;&lt;fa-icon [icon]="left"&gt;&lt;/fa-icon&gt;&lt;/tr&gt;
+&lt;tr class="content"&gt;&lt;td&gt;&lt;fa-icon [icon]="map"&gt;&lt;/fa-icon&gt;Maps&lt;/td&gt;&lt;fa-icon [icon]="left"&gt;&lt;/fa-icon&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</code>
+</pre>
+
+<pre class="css">
+<code>
+{{"table{
+    background-color:black;
+    color: floralwhite;
+    font-size: 26px;
+}
+tr{
+    padding-bottom: 50px;
+}
+fa-icon{
+   padding-right: 10px;
+   font-size: 30px; 
+}
+.content:hover{
+    background-color: orangered;
+}
+
+"}}
+</code>
+</pre>
+
+<pre class="ts">
+<code>{{"import { Component, OnInit } from '@angular/core';
+import {faTable,faCalendar,faEnvelope,faHome,faAnchor,faImage,faMapMarker,faSearch,faUser,faChartBar,faAngleLeft,faThLarge} from '@fortawesome/free-solid-svg-icons';
+import {MatBadgeModule } from '@angular/material/badge';
+@Component({
+  selector: 'lib-dashboardlib',
+  templateUrl:'./dashboardlib.component.html',
+  styleUrls: ['./dashboardlib.component.css'
+  ]
+})
+export class DashboardlibComponent implements OnInit {
+
+  constructor() { }
+  mail=faEnvelope;
+  home=faHome;
+  map=faMapMarker;
+  table=faTable;
+  user=faUser;
+  widget=faThLarge;
+  calendar=faCalendar;
+  anchor=faAnchor;
+  chart=faChartBar;
+  image=faImage;
+  search=faSearch;
+  left=faAngleLeft;
+
+   
+  ngOnInit(): void {
+  }
+
+}
+"}}
+</code>
+</pre>
+</lib-codedisplay>
