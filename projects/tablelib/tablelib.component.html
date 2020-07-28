@@ -1,0 +1,159 @@
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Product Detail Views</th>
+<th>Product Adds To Cart</th>
+<th>Products Revenue</th>
+<th>Products Revenue per purchase</th>
+<th>Cart To Detail Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><input class="form-control" type="text" [(ngModel)]="newValue.product" ></td>
+<td><input class="form-control" type="text" [(ngModel)]="newValue.productviews"></td>
+<td><input class="form-control" type="text" [(ngModel)]="newValue.product_adds_to_cart" ></td>
+<td><input class="form-control" type="text" [(ngModel)]="newValue.product_revenue"></td>
+<td><input class="form-control" type="text" [(ngModel)]="newValue.product_revenue_per_purchase"></td>
+<td><input class="form-control" type="text" [(ngModel)]="newValue.cart_to_detail_rate"></td>
+<button mat-button (click)="addValue()">+</button>
+</tr>
+</tbody>
+</table>
+
+<div style="padding:50px"></div>
+<table>
+<thead>
+<tr style="background-color:darkblue;color:white">
+<th>Product</th>
+<th>Product Detail Views</th>
+<th>Product Adds To Cart</th>
+<th>Products Revenue</th>
+<th>Products Revenue per purchase</th>
+<th>Cart To Detail Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let field of fieldArray">
+<td>{{field.product}}
+</td>
+<td>{{field.productviews}}
+</td>
+<td>{{field.product_adds_to_cart}}
+</td>
+<td>${{field.product_revenue}}
+</td>
+<td>${{field.product_revenue_per_purchase}}
+</td>
+<td>${{field.cart_to_detail_rate}}
+</td>
+</tr>
+</tbody>
+</table>
+
+<lib-codedisplay>
+<pre class="htmlcode">
+<code>
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Product&lt;/th&gt;
+&lt;th&gt;Product Detail Views&lt;/th&gt;
+&lt;th&gt;Product Adds To Cart&lt;/th&gt;
+&lt;th&gt;Products Revenue&lt;/th&gt;
+&lt;th&gt;Products Revenue per purchase&lt;/th&gt;
+&lt;th&gt;Cart To Detail Rate&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;input class="form-control" type="text" [(ngModel)]="newValue.product" &gt;&lt;/td&gt;
+&lt;td&gt;&lt;input class="form-control" type="text" [(ngModel)]="newValue.productviews"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;input class="form-control" type="text" [(ngModel)]="newValue.product_adds_to_cart" &gt;&lt;/td&gt;
+&lt;td&gt;&lt;input class="form-control" type="text" [(ngModel)]="newValue.product_revenue"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;input class="form-control" type="text" [(ngModel)]="newValue.product_revenue_per_purchase"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;input class="form-control" type="text" [(ngModel)]="newValue.cart_to_detail_rate"&gt;&lt;/td&gt;
+&lt;button mat-button (click)="addValue()"&gt;+&lt;/button&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div style="padding:50px"&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr style="background-color:darkblue;color:white"&gt;
+&lt;th&gt;Product&lt;/th&gt;
+&lt;th&gt;Product Detail Views&lt;/th&gt;
+&lt;th&gt;Product Adds To Cart&lt;/th&gt;
+&lt;th&gt;Products Revenue&lt;/th&gt;
+&lt;th&gt;Products Revenue per purchase&lt;/th&gt;
+&lt;th&gt;Cart To Detail Rate&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr *ngFor="let field of fieldArray"&gt;
+&lt;td&gt;{{"field.product"}}
+&lt;/td&gt;
+&lt;td&gt;{{"field.productviews"}}
+&lt;/td&gt;
+&lt;td&gt;{{"field.product_adds_to_cart"}}
+&lt;/td&gt;
+&lt;td&gt;${{"field.product_revenue"}}
+&lt;/td&gt;
+&lt;td&gt;${{"field.product_revenue_per_purchase"}}
+&lt;/td&gt;
+&lt;td&gt;${{"field.cart_to_detail_rate"}}
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</code>
+</pre>
+
+<pre class="css">
+<code>{{"table {
+    width: 100%;
+    border-collapse : collapse;
+  }
+  input{
+    width : 200px;
+  }"}}
+</code>
+</pre>
+
+<pre class="ts">
+<code>{{"
+import { Component, OnInit,Input } from '@angular/core';
+
+@Component({
+  selector: 'lib-tablelib',
+  templateUrl: './tablelib.component.html',
+  styleUrls: ['./tablelib.component.css'
+  ]
+})
+export class TablelibComponent implements OnInit {
+
+  
+  
+  public fieldArray : Array<any> =[];
+  public newValue :any ={};
+
+  addValue(){
+    this.fieldArray.push(this.newValue);
+    this.newValue={};
+  }
+
+  
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
+"}}
+</code>
+</pre>
+</lib-codedisplay>
+
+
