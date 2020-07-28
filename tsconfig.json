@@ -1,0 +1,79 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "stocklib": [
+        "dist/stocklib/stocklib",
+        "dist/stocklib"
+      ],
+      "pielib": [
+        "dist/pielib/pielib",
+        "dist/pielib"
+      ],
+      "horibar": [
+        "dist/horibar/horibar",
+        "dist/horibar"
+      ],
+      "saleslib": [
+        "dist/saleslib/saleslib",
+        "dist/saleslib"
+      ],
+      "tablelib": [
+        "dist/tablelib/tablelib",
+        "dist/tablelib"
+      ],
+      "menu": [
+        "dist/menu/menu",
+        "dist/menu"
+      ],
+      "dashboardlib": [
+        "dist/dashboardlib/dashboardlib",
+        "dist/dashboardlib"
+      ],
+      "weatherlib": [
+        "dist/weatherlib/weatherlib",
+        "dist/weatherlib",
+        "dist/weatherlib/weatherlib",
+        "dist/weatherlib"
+      ],
+      "progresschartlib": [
+        "dist/progresschartlib/progresschartlib",
+        "dist/progresschartlib"
+      ],
+      "progresslib": [
+        "dist/progresslib/progresslib",
+        "dist/progresslib"
+      ],
+      "horibarlib": [
+        "dist/horibarlib/horibarlib",
+        "dist/horibarlib"
+      ],
+      "linechartlib": [
+        "dist/linechartlib/linechartlib",
+        "dist/linechartlib"
+      ],
+      "areachartlib": [
+        "dist/areachartlib/areachartlib",
+        "dist/areachartlib"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}

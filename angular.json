@@ -1,0 +1,652 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "stocklib": {
+      "projectType": "library",
+      "root": "projects/stocklib",
+      "sourceRoot": "projects/stocklib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/stocklib/tsconfig.lib.json",
+            "project": "projects/stocklib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/stocklib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/stocklib/src/test.ts",
+            "tsConfig": "projects/stocklib/tsconfig.spec.json",
+            "karmaConfig": "projects/stocklib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/stocklib/tsconfig.lib.json",
+              "projects/stocklib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/app",
+      "sourceRoot": "projects/app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/app",
+            "index": "projects/app/src/index.html",
+            "main": "projects/app/src/main.ts",
+            "polyfills": "projects/app/src/polyfills.ts",
+            "tsConfig": "projects/app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/app/src/favicon.ico",
+              "projects/app/src/assets"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/app/src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/apexcharts/dist/apexcharts.min.js"
+            ]
+          },
+          
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/app/src/environments/environment.ts",
+                  "with": "projects/app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/app/src/test.ts",
+            "polyfills": "projects/app/src/polyfills.ts",
+            "tsConfig": "projects/app/tsconfig.spec.json",
+            "karmaConfig": "projects/app/karma.conf.js",
+            "assets": [
+              "projects/app/src/favicon.ico",
+              "projects/app/src/assets"
+            ],
+            "styles": [
+              "projects/app/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/app/tsconfig.app.json",
+              "projects/app/tsconfig.spec.json",
+              "projects/app/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/app/e2e/protractor.conf.js",
+            "devServerTarget": "app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "pielib": {
+      "projectType": "library",
+      "root": "projects/pielib",
+      "sourceRoot": "projects/pielib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/pielib/tsconfig.lib.json",
+            "project": "projects/pielib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/pielib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/pielib/src/test.ts",
+            "tsConfig": "projects/pielib/tsconfig.spec.json",
+            "karmaConfig": "projects/pielib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/pielib/tsconfig.lib.json",
+              "projects/pielib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "horibar": {
+      "projectType": "library",
+      "root": "projects/horibar",
+      "sourceRoot": "projects/horibar/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/horibar/tsconfig.lib.json",
+            "project": "projects/horibar/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/horibar/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/horibar/src/test.ts",
+            "tsConfig": "projects/horibar/tsconfig.spec.json",
+            "karmaConfig": "projects/horibar/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/horibar/tsconfig.lib.json",
+              "projects/horibar/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "saleslib": {
+      "projectType": "library",
+      "root": "projects/saleslib",
+      "sourceRoot": "projects/saleslib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/saleslib/tsconfig.lib.json",
+            "project": "projects/saleslib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/saleslib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/saleslib/src/test.ts",
+            "tsConfig": "projects/saleslib/tsconfig.spec.json",
+            "karmaConfig": "projects/saleslib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/saleslib/tsconfig.lib.json",
+              "projects/saleslib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "tablelib": {
+      "projectType": "library",
+      "root": "projects/tablelib",
+      "sourceRoot": "projects/tablelib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tablelib/tsconfig.lib.json",
+            "project": "projects/tablelib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/tablelib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tablelib/src/test.ts",
+            "tsConfig": "projects/tablelib/tsconfig.spec.json",
+            "karmaConfig": "projects/tablelib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tablelib/tsconfig.lib.json",
+              "projects/tablelib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "menu": {
+      "projectType": "library",
+      "root": "projects/menu",
+      "sourceRoot": "projects/menu/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/menu/tsconfig.lib.json",
+            "project": "projects/menu/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/menu/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/menu/src/test.ts",
+            "tsConfig": "projects/menu/tsconfig.spec.json",
+            "karmaConfig": "projects/menu/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/menu/tsconfig.lib.json",
+              "projects/menu/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "dashboardlib": {
+      "projectType": "library",
+      "root": "projects/dashboardlib",
+      "sourceRoot": "projects/dashboardlib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/dashboardlib/tsconfig.lib.json",
+            "project": "projects/dashboardlib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/dashboardlib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dashboardlib/src/test.ts",
+            "tsConfig": "projects/dashboardlib/tsconfig.spec.json",
+            "karmaConfig": "projects/dashboardlib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/dashboardlib/tsconfig.lib.json",
+              "projects/dashboardlib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "progresschartlib": {
+      "projectType": "library",
+      "root": "projects/progresschartlib",
+      "sourceRoot": "projects/progresschartlib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/progresschartlib/tsconfig.lib.json",
+            "project": "projects/progresschartlib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/progresschartlib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/progresschartlib/src/test.ts",
+            "tsConfig": "projects/progresschartlib/tsconfig.spec.json",
+            "karmaConfig": "projects/progresschartlib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/progresschartlib/tsconfig.lib.json",
+              "projects/progresschartlib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "progresslib": {
+      "projectType": "library",
+      "root": "projects/progresslib",
+      "sourceRoot": "projects/progresslib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/progresslib/tsconfig.lib.json",
+            "project": "projects/progresslib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/progresslib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/progresslib/src/test.ts",
+            "tsConfig": "projects/progresslib/tsconfig.spec.json",
+            "karmaConfig": "projects/progresslib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/progresslib/tsconfig.lib.json",
+              "projects/progresslib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "horibarlib": {
+      "projectType": "library",
+      "root": "projects/horibarlib",
+      "sourceRoot": "projects/horibarlib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/horibarlib/tsconfig.lib.json",
+            "project": "projects/horibarlib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/horibarlib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/horibarlib/src/test.ts",
+            "tsConfig": "projects/horibarlib/tsconfig.spec.json",
+            "karmaConfig": "projects/horibarlib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/horibarlib/tsconfig.lib.json",
+              "projects/horibarlib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "linechartlib": {
+      "projectType": "library",
+      "root": "projects/linechartlib",
+      "sourceRoot": "projects/linechartlib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/linechartlib/tsconfig.lib.json",
+            "project": "projects/linechartlib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/linechartlib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/linechartlib/src/test.ts",
+            "tsConfig": "projects/linechartlib/tsconfig.spec.json",
+            "karmaConfig": "projects/linechartlib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/linechartlib/tsconfig.lib.json",
+              "projects/linechartlib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "areachartlib": {
+      "projectType": "library",
+      "root": "projects/areachartlib",
+      "sourceRoot": "projects/areachartlib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/areachartlib/tsconfig.lib.json",
+            "project": "projects/areachartlib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/areachartlib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/areachartlib/src/test.ts",
+            "tsConfig": "projects/areachartlib/tsconfig.spec.json",
+            "karmaConfig": "projects/areachartlib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/areachartlib/tsconfig.lib.json",
+              "projects/areachartlib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "weatherlib": {
+      "projectType": "library",
+      "root": "projects/weatherlib",
+      "sourceRoot": "projects/weatherlib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/weatherlib/tsconfig.lib.json",
+            "project": "projects/weatherlib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/weatherlib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/weatherlib/src/test.ts",
+            "tsConfig": "projects/weatherlib/tsconfig.spec.json",
+            "karmaConfig": "projects/weatherlib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/weatherlib/tsconfig.lib.json",
+              "projects/weatherlib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  },
+  "defaultProject": "stocklib"
+}
