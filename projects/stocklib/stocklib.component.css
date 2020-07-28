@@ -1,0 +1,22 @@
+table{
+    background-color: darkblue;
+    border-radius: 5px;
+}
+th, tr{
+ padding:5px;
+}
+td{
+    text-align: center;
+}
+th,td{
+    color: white;
+}
+.htmlcode{
+    color: blanchedalmond;
+}
+.css{
+    color: blanchedalmond;
+}
+.ts{
+    color: blanchedalmond;
+}
