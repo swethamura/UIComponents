@@ -1,0 +1,24 @@
+.full{
+    background-color: gray;
+    padding: 5px;
+}
+table{
+    background-color: skyblue;
+    color: snow;
+    border-radius: 5px;
+}
+fa-icon{
+    font-size: 100px;
+}
+td{
+    padding : 25px;
+}
+.htmlcode{
+    color: blanchedalmond;
+}
+.css{
+    color: blanchedalmond;
+}
+.ts{
+    color: blanchedalmond;
+}
