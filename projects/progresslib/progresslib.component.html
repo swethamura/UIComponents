@@ -1,0 +1,99 @@
+<table class="full">
+<tr><th style="font-size:25px">This Month</th></tr>
+<table>
+<tr><th>Sales</th><td>52%</td></tr>
+<tr><ngb-progressbar type="danger" value="52" height="3px" style="width:100%"></ngb-progressbar></tr>
+<tr><th>Projects</th><td>80%</td></tr>
+<tr><ngb-progressbar type="warning" [value]="80" height="3px"></ngb-progressbar></tr>
+<tr><th>Visitors</th><td>25%</td></tr>
+<tr><ngb-progressbar type="success" [value]="25" height="3px"></ngb-progressbar></tr>
+<tr><th>NewUsers</th><td>93%</td></tr>
+<tr><ngb-progressbar type="primary" [value]="93" height="3px"></ngb-progressbar></tr>
+<tr><th>Revenue</th><td>50%</td></tr>
+<tr><ngb-progressbar type="secondary" [value]="50" height="3px"></ngb-progressbar></tr>
+<tr><th>Total Sold</th><td>40%</td></tr>
+<tr><ngb-progressbar type="info" [value]="40" height="3px"></ngb-progressbar></tr>
+</table>
+</table>
+<lib-codedisplay>
+<pre class="htmlcode">
+<code>
+&lt;table class="full"&gt;
+&lt;tr&gt;&lt;th style="font-size:25px"&gt;This Month&lt;/th&gt;&lt;/tr&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;th&gt;Sales&lt;/th&gt;&lt;td&gt;52%&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;ngb-progressbar type="danger" [value]="52" height="3px" style="width:100%"&gt;&lt;/ngb-progressbar&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Projects&lt;/th&gt;&lt;td&gt;80%&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;ngb-progressbar type="warning" [value]="80" height="3px"&gt;&lt;/ngb-progressbar&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Visitors&lt;/th&gt;&lt;td&gt;25%&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;ngb-progressbar type="success" [value]="25" height="3px"&gt;&lt;/ngb-progressbar&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th>NewUsers&lt;/th&gt;&lt;td&gt;93%&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;ngb-progressbar type="primary" [value]="93" height="3px"&gt;&lt;/ngb-progressbar&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Revenue&lt;/th&gt;&lt;td&gt;50%&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;ngb-progressbar type="secondary" [value]="50" height="3px"&gt;&lt;/ngb-progressbar&gt;&lt;/tr&gt;
+&lt;tr&gt; &lt;th&gt;Total Sold&lt;/th&gt;&lt;td&gt;40%&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt; &lt;ngb-progressbar type="info" [value]="40" height="3px"&gt;&lt;/ngb-progressbar&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/table&gt;
+
+</code>
+</pre>
+
+<pre class="css">
+<code>
+{{"table{
+    background-color: white;
+}
+.full{
+    background-color:white;
+    padding: 10px;
+    border-collapse: collapse;
+    border:solid  lightgrey 5px;
+}
+th{
+    font-size: 22px;
+}
+td{
+    font-size: 15px;
+    padding-left: 10px;
+}
+ ngb-progressbar {
+    margin-top: 5rem;
+  }
+
+  .code{
+    background-color: black;
+   flex: 1 1 auto;
+    margin-left: 500px;
+    margin-top: 200px;
+  }"}}
+</code>
+</pre>
+
+<pre class="ts">
+<code>
+{{"import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+//import { ProgressBarMode } from '@angular/material/progress-bar';
+//import { ThemePalette } from '@angular/material/core';
+
+@Component({
+  selector: 'lib-progresslib',
+  templateUrl: './progresslib.component.html',
+  styleUrls: ['./progresslib.component.css'
+  ]
+})
+export class ProgresslibComponent implements OnInit,OnChanges {
+
+  constructor() { }
+  ngOnChanges(changes: SimpleChanges) {
+  }
+
+  ngOnInit(): void {
+  }
+
+}
+"}}
+</code>
+</pre>
+</lib-codedisplay>
+
