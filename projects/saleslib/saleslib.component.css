@@ -1,0 +1,51 @@
+#sales{
+    background-color: darkturquoise;
+    border-radius: 5px;     
+}
+.data{
+    text-align: left;
+    color: white; 
+    font-size: small;
+    padding-left: 50px;
+}
+.visitors{
+    background-color: turquoise;
+    border-radius: 5px;
+}
+.revenue{
+    background-color: darkorange;
+    border-radius: 5px;
+}
+.subscribers{
+    background-color: cadetblue;
+    border-radius: 5px;
+}
+.full{
+    background-color: lightsteelblue;
+    border-radius: 5px;
+    table-layout:fixed;
+}
+button{
+    width : 50px ;
+    height:50px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.sample{
+    border : solid lightsteelblue 5px;
+    border-collapse: collapse;
+    border-radius: 5px;
+    padding : 20px;
+}
+
+.htmlcode{
+    color: blanchedalmond;
+}
+.css{
+    color: blanchedalmond;
+}
+.ts{
+    color: blanchedalmond;
+}
+
