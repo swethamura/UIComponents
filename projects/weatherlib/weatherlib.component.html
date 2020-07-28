@@ -1,0 +1,102 @@
+<table class="full">
+<table>
+<tr><td><fa-icon [icon]="sunrain"></fa-icon></td>
+<td style="padding-left:405px"><p style="font-size:30px;font-weight:bold">25</p><fa-icon [icon]="map" style="font-size:30px"></fa-icon>London</td></tr>
+</table>
+<table>
+<tr style="font-size:25px;font-weight:bold;text-align:center"><td>Mon</td><td>Tue</td><td>Wed</td><td>Thu</td></tr>
+<tr>
+<td><fa-icon [icon]="cloud"></fa-icon></td>
+<td><fa-icon [icon]="moonrain"></fa-icon></td>
+<td><fa-icon [icon]="rain"></fa-icon></td>
+<td><fa-icon [icon]="sun"></fa-icon></td>
+</tr>
+<tr style="font-size:25px;font-weight:bold;text-align:center">
+<td>27</td>
+<td>23</td>
+<td>19</td>
+<td>38</td>
+</tr>
+</table>
+</table>
+
+
+<lib-codedisplay>
+<pre class="htmlcode">
+<code>
+&lt;table class="full"&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;&lt;fa-icon [icon]="sunrain"&gt;&lt;/fa-icon&gt;&lt;/td&gt;
+&lt;td style="padding-left:405px"&gt;&lt;p style="font-size:30px;font-weight:bold"&gt;25&lt;/p&gt;&lt;fa-icon [icon]="map" style="font-size:30px"&gt;&lt;/fa-icon&gt;London&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;tr style="font-size:25px;font-weight:bold;text-align:center"&gt;&lt;td&gt;Mon&lt;/td&gt;&lt;td&gt;Tue&lt;/td&gt;&lt;td&gt;Wed&lt;/td&gt;&lt;td&gt;Thu&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;fa-icon [icon]="cloud"&gt;&lt;/fa-icon&gt;&lt;/td&gt;
+&lt;td&gt;&lt;fa-icon [icon]="moonrain"&gt;&lt;/fa-icon&gt;&lt;/td&gt;
+&lt;td&gt;&lt;fa-icon [icon]="rain"&gt;&lt;/fa-icon&gt;&lt;/td&gt;
+&lt;td&gt;&lt;fa-icon [icon]="sun"&gt;&lt;/fa-icon&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="font-size:25px;font-weight:bold;text-align:center"&gt;
+&lt;td&gt;27&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;38&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/table&gt;
+</code>
+</pre>
+
+<pre class="css">
+
+<code>{{".full{
+    background-color: gray;
+    padding: 5px;
+}
+table{
+    background-color: skyblue;
+    color: snow;
+    border-radius: 5px;
+}
+fa-icon{
+    font-size: 100px;
+}
+td{
+    padding : 25px;
+}
+"}}
+</code>
+</pre>
+
+
+<pre class="ts">
+<code>{{"import { Component, OnInit } from '@angular/core';
+import {faCloud,faCloudSun,faCloudRain,faCloudMoonRain,faCloudSunRain,faMapMarker} from '@fortawesome/free-solid-svg-icons';
+@Component({
+  selector: 'lib-weatherlib',
+  templateUrl: './weatherlib.component.html',
+  styleUrls: ['./weatherlib.component.css'
+  ]
+})
+export class WeatherlibComponent implements OnInit {
+
+  constructor() { }
+  sunrain=faCloudSunRain;
+  map=faMapMarker;
+  cloud=faCloud;
+  sun=faCloudSun;
+  rain=faCloudRain;
+  moonrain=faCloudMoonRain;
+
+ 
+  ngOnInit(): void {
+  }
+
+}
+"}}
+</code>
+</pre>
+
+</lib-codedisplay>
+
