@@ -1,0 +1,97 @@
+<p>Session</p>
+<input type="text" [(ngModel)]="session">
+
+<p>Revenue</p>
+<input type="text" [(ngModel)]="revenue">
+
+<p>Conservation Rate</p>
+<input type="text" [(ngModel)]="conservationRate">
+
+<p>Transactions</p>
+<input type="text" [(ngModel)]="transactions">
+
+
+
+<table>
+<tr><th>SESSION</th><th>REVENUE</th></tr>
+<tr><td>{{session}}K</td><td>${{revenue}}</td></tr>
+<tr><th>CONSERVATION RATE</th><th>TRANSACTIONS</th></tr>
+<tr><td>{{conservationRate}}%</td><td>{{transactions}}</td></tr>
+</table>
+
+
+
+
+<lib-codedisplay>
+<pre class="htmlcode">
+<code>
+&lt;p&gt;Session&lt;/p&gt;
+&lt;input type="text" [(ngModel)]="session"&gt;
+
+&lt;p&gt;Revenue&lt;/p&gt;
+&lt;input type="text" [(ngModel)]="revenue"&gt;
+
+&lt;p&gt;Conservation Rate&lt;/p&gt;
+&lt;input type="text" [(ngModel)]="conservationRate"&gt;
+
+&lt;p&gt;Transactions&lt;/p&gt;
+&lt;input type="text" [(ngModel)]="transactions"&gt;
+
+
+
+&lt;table&gt;
+&lt;tr&gt;&lt;th&gt;SESSION&lt;/th&gt;&lt;th&gt;REVENUE&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;{{session}}K&lt;/td&gt;&lt;td&gt;${{revenue}}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;CONSERVATION RATE&lt;/th&gt;&lt;th&gt;TRANSACTIONS&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;{{conservationRate}}%&lt;/td&gt;&lt;td&gt;{{transactions}}&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code>
+</pre>
+
+<pre class="css">
+<code>{{"
+table{
+    background-color: darkblue;
+    border-radius: 5px;
+}
+th, tr{
+ padding:5px;
+}
+td{
+    text-align: center;
+}
+th,td{
+    color: white;
+}"}}
+</code>
+</pre>
+
+<pre class="ts">
+<code>{{"import { stockdetails } from './../../../app/src/app/stock';
+import { Component, OnInit,Input } from '@angular/core';
+
+@Component({
+  selector: 'lib-stocklib',
+  templateUrl: './stocklib.component.html',
+  styleUrls: ['./stocklib.component.css'
+  ]
+})
+export class StocklibComponent implements OnInit {
+
+  constructor() { }
+
+  revenue="";
+  conservationRate="";
+  transactions="";
+  session="";
+ 
+ ngOnInit(): void {
+  }
+
+}
+"}}
+</code>
+</pre>
+</lib-codedisplay>
+
+
+
