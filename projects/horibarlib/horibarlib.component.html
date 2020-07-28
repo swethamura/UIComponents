@@ -1,0 +1,90 @@
+
+
+<ngx-charts-bar-horizontal-2d
+  [view]="view"
+  [scheme]="colorScheme"
+  [schemeType]="schemeType"
+  [results]="multi"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [legendPosition]="legendPosition"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  >
+</ngx-charts-bar-horizontal-2d>
+
+<lib-codedisplay>
+<pre class="htmlcode">
+<code>
+&lt;ngx-charts-bar-horizontal-2d
+  [view]="view"
+  [scheme]="colorScheme"
+  [schemeType]="schemeType"
+  [results]="multi"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [legendPosition]="legendPosition"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  &gt;
+&lt;/ngx-charts-bar-horizontal-2d&gt;
+
+</code>
+</pre>
+
+
+<pre class="ts">
+<code>
+{{"import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { multi } from './data';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'lib-horibarlib',
+  templateUrl: './horibarlib.component.html',
+  styleUrls: ['./horibarlib.component.css'
+  ]
+})
+export class HoribarlibComponent implements OnInit {
+
+  
+  multi: any[];
+  view: any[] = [700, 400];
+
+  // options
+  showXAxis: boolean = true;
+  showYAxis: boolean = true;
+  gradient: boolean = false;
+  showLegend: boolean = true;
+  legendPosition: string = 'below';
+  showXAxisLabel: boolean = true;
+  yAxisLabel: string = 'Devices';
+  showYAxisLabel: boolean = true;
+  xAxisLabel = 'Population';
+
+  colorScheme = {
+    domain: ['orange', 'green', '#AAAAAA']
+  };
+  schemeType: string = 'ordinal';
+
+ 
+  constructor() { 
+    Object.assign(this, { multi });
+  }
+
+  ngOnInit(): void {
+  }
+
+}
+"}}
+</code>
+</pre>
+</lib-codedisplay>
