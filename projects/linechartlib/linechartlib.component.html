@@ -1,0 +1,424 @@
+<!--
+&lt;The content below is only a placeholder and can be replaced.--&gt;
+&lt;div id="chart"&gt;
+  &lt;apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [xaxis]="chartOptions.xaxis"
+    [stroke]="chartOptions.stroke"
+    [colors]="chartOptions.colors"
+    [dataLabels]="chartOptions.dataLabels"
+    [legend]="chartOptions.legend"
+    [markers]="chartOptions.markers"
+    [grid]="chartOptions.grid"
+    [yaxis]="chartOptions.yaxis"
+    [title]="chartOptions.title"
+  &gt;&lt;/apx-chart&gt;
+&lt;/div&gt;
+
+-->
+<!--The content below is only a placeholder and can be replaced.-->
+<div id="chart">
+  <apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [xaxis]="chartOptions.xaxis"
+    [stroke]="chartOptions.stroke"
+    [colors]="chartOptions.colors"
+    [dataLabels]="chartOptions.dataLabels"
+    [legend]="chartOptions.legend"
+    [markers]="chartOptions.markers"
+    [grid]="chartOptions.grid"
+    [yaxis]="chartOptions.yaxis"
+    [title]="chartOptions.title"
+  ></apx-chart>
+</div>
+<!--
+<table class="full">
+<tr><th style="font-size:25px">This Month</th></tr>
+<table>
+<tr><th>Sales</th><td>52%</td></tr>
+<tr><ngb-progressbar type="danger" value="52" height="3px" style="width:100%"></ngb-progressbar></tr>
+<tr><th>Projects</th><td>80%</td></tr>
+<tr><ngb-progressbar type="warning" [value]="80" height="3px"></ngb-progressbar></tr>
+<tr><th>Visitors</th><td>25%</td></tr>
+<tr><ngb-progressbar type="success" [value]="25" height="3px"></ngb-progressbar></tr>
+<tr><th>NewUsers</th><td>93%</td></tr>
+<tr><ngb-progressbar type="primary" [value]="93" height="3px"></ngb-progressbar></tr>
+<tr><th>Revenue</th><td>50%</td></tr>
+<tr><ngb-progressbar type="secondary" [value]="50" height="3px"></ngb-progressbar></tr>
+<tr><th>Total Sold</th><td>40%</td></tr>
+<tr><ngb-progressbar type="info" [value]="40" height="3px"></ngb-progressbar></tr>
+</table>
+</table>
+
+
+
+<div class="code">
+<mat-toolbar style="background-color:snow">
+<button mat-button (click)=displayhtml()>HTML</button>
+<button mat-button (click)=displaycss()>CSS</button>
+<button mat-button (click)=displayts()>TS</button>
+</mat-toolbar>
+<pre style="color:white">
+<code *ngIf=ishtml >
+&lt;table class="full"&gt;
+&lt;tr&gt;&lt;th style="font-size:25px"&gt;This Month&lt;/th&gt;&lt;/tr&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;th&gt;Sales&lt;/th&gt;&lt;td&gt;52%&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;ngb-progressbar type="danger" [value]="52" height="3px" style="width:100%"&gt;&lt;/ngb-progressbar&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Projects&lt;/th&gt;&lt;td&gt;80%&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;ngb-progressbar type="warning" [value]="80" height="3px"&gt;&lt;/ngb-progressbar&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Visitors&lt;/th&gt;&lt;td&gt;25%&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;ngb-progressbar type="success" [value]="25" height="3px"&gt;&lt;/ngb-progressbar&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th>NewUsers&lt;/th&gt;&lt;td&gt;93%&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;ngb-progressbar type="primary" [value]="93" height="3px"&gt;&lt;/ngb-progressbar&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Revenue&lt;/th&gt;&lt;td&gt;50%&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;ngb-progressbar type="secondary" [value]="50" height="3px"&gt;&lt;/ngb-progressbar&gt;&lt;/tr&gt;
+&lt;tr&gt; &lt;th&gt;Total Sold&lt;/th&gt;&lt;td&gt;40%&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt; &lt;ngb-progressbar type="info" [value]="40" height="3px"&gt;&lt;/ngb-progressbar&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/table&gt;
+</code>
+</pre>
+<pre *ngIf=iscss style="color:white">
+<code>
+{{"table{
+    background-color: white;
+}
+.full{
+    background-color:white;
+    padding: 10px;
+    border-collapse: collapse;
+    border:solid  lightgrey 5px;
+}
+th{
+    font-size: 22px;
+}
+td{
+    font-size: 15px;
+    padding-left: 10px;
+}
+ ngb-progressbar {
+    margin-top: 5rem;
+  }
+"
+}}
+</code>
+</pre>
+<pre *ngIf=ists style="color:white">
+<code>
+{{"
+import { linedata } from './linechartdata';
+import { Component, OnInit, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+
+import {
+  ChartComponent,
+  ApexAxisChartSeries,
+  ApexChart,
+  ApexXAxis,
+  ApexDataLabels,
+  ApexStroke,
+  ApexMarkers,
+  ApexYAxis,
+  ApexGrid,
+  ApexTitleSubtitle,
+  ApexLegend
+} from "ng-apexcharts";
+
+export type ChartOptions = {
+  series: ApexAxisChartSeries;
+  chart: ApexChart;
+  xaxis: ApexXAxis;
+  stroke: ApexStroke;
+  dataLabels: ApexDataLabels;
+  markers: ApexMarkers;
+  colors: string[];
+  yaxis: ApexYAxis;
+  grid: ApexGrid;
+  legend: ApexLegend;
+  title: ApexTitleSubtitle;
+};
+
+@Component({
+  selector: 'lib-linechartlib',
+  templateUrl:'./linechartlib.component.html',
+  styles: [
+  ]
+})
+export class LinechartlibComponent implements OnInit,OnChanges {
+  @ViewChild("chart") chart: ChartComponent;
+  public chartOptions: Partial<ChartOptions>;
+
+  constructor() {
+    this.chartOptions = {
+      series: [
+        {
+          name: "Sessions",
+          data: [28, 29, 33, 36, 32, 32, 33]
+        },
+        {
+          name: "Sessions(previous 30 days)",
+          data: [12, 11, 14, 18, 17, 13, 13]
+        }
+      ],
+      chart: {
+        height: 350,
+        width:600,
+        type: "line",
+        dropShadow: {
+          enabled: false,
+          color: ""#"000",
+          top: 18,
+          left: 7,
+          blur: 10,
+          opacity: 0.2
+        },
+        toolbar: {
+          show: false
+        }
+      },
+      colors: [""#"77B6EA", ""#"95B9C7"],
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        curve: "straight"
+      },
+      title: {
+        text: "Session Chart",
+        align: "left"
+      },
+      grid: {
+        borderColor: ""#"e7e7e7",
+        row: {
+          colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+          opacity: 0.5
+        },
+        column:{
+          colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+          opacity: 0.5
+        }
+      },
+      markers: {
+        size: 8
+      },
+      xaxis: {
+        categories: ["Jun8","Jun13","Jun18","Jun23","Jun28","Jul3"],
+        title: {
+          text: "Month"
+        }
+      },
+      yaxis: {
+        title: {
+          text: "sessions"
+        },
+        min: 5,
+        max: 40
+      },
+      legend: {
+        position: "top",
+        horizontalAlign: "right",
+        floating: true,
+        offsetY: -25,
+        offsetX: -5
+      }
+    };
+
+   }
+   
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    
+  }
+
+
+  ngOnInit(): void {
+  }
+
+}
+
+"
+}}
+</code>
+</pre>
+
+</div>
+
+
+-->
+<lib-codedisplay>
+<pre class="htmlcode">
+<code>
+&lt;div id="chart"&gt;
+  &lt;apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [xaxis]="chartOptions.xaxis"
+    [stroke]="chartOptions.stroke"
+    [colors]="chartOptions.colors"
+    [dataLabels]="chartOptions.dataLabels"
+    [legend]="chartOptions.legend"
+    [markers]="chartOptions.markers"
+    [grid]="chartOptions.grid"
+    [yaxis]="chartOptions.yaxis"
+    [title]="chartOptions.title"
+  &gt;&lt;/apx-chart&gt;
+&lt;/div&gt;
+
+</code>
+</pre>
+
+
+<pre class="ts">
+<code>
+{{"
+import { linedata } from './linechartdata';
+import { Component, OnInit, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+
+import {
+  ChartComponent,
+  ApexAxisChartSeries,
+  ApexChart,
+  ApexXAxis,
+  ApexDataLabels,
+  ApexStroke,
+  ApexMarkers,
+  ApexYAxis,
+  ApexGrid,
+  ApexTitleSubtitle,
+  ApexLegend
+} from "ng-apexcharts";
+
+export type ChartOptions = {
+  series: ApexAxisChartSeries;
+  chart: ApexChart;
+  xaxis: ApexXAxis;
+  stroke: ApexStroke;
+  dataLabels: ApexDataLabels;
+  markers: ApexMarkers;
+  colors: string[];
+  yaxis: ApexYAxis;
+  grid: ApexGrid;
+  legend: ApexLegend;
+  title: ApexTitleSubtitle;
+};
+
+@Component({
+  selector: 'lib-linechartlib',
+  templateUrl:'./linechartlib.component.html',
+  styleUrls: ['./linechartlib.component.css'
+  ]
+})
+export class LinechartlibComponent implements OnInit,OnChanges {
+  @ViewChild("chart") chart: ChartComponent;
+  public chartOptions: Partial<ChartOptions>;
+
+  constructor() {
+    this.chartOptions = {
+      series: [
+        {
+          name: "Sessions",
+          data: [28, 29, 33, 36, 32, 32, 33]
+        },
+        {
+          name: "Sessions(previous 30 days)",
+          data: [12, 11, 14, 18, 17, 13, 13]
+        }
+      ],
+      chart: {
+        height: 350,
+        width:600,
+        type: "line",
+        dropShadow: {
+          enabled: false,
+          color: "#000",
+          top: 18,
+          left: 7,
+          blur: 10,
+          opacity: 0.2
+        },
+        toolbar: {
+          show: false
+        }
+      },
+      colors: ["#77B6EA", "#95B9C7"],
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        curve: "straight"
+      },
+      title: {
+        text: "Session Chart",
+        align: "left"
+      },
+      grid: {
+        borderColor: "#e7e7e7",
+        row: {
+          colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+          opacity: 0.5
+        },
+        column:{
+          colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+          opacity: 0.5
+        }
+      },
+      markers: {
+        size: 8
+      },
+      xaxis: {
+        categories: ["Jun8","Jun13","Jun18","Jun23","Jun28","Jul3"],
+        title: {
+          text: "Month"
+        }
+      },
+      yaxis: {
+        title: {
+          text: "sessions"
+        },
+        min: 5,
+        max: 40
+      },
+      legend: {
+        position: "top",
+        horizontalAlign: "right",
+        floating: true,
+        offsetY: -25,
+        offsetX: -5
+      }
+    };
+
+   }
+   ishtml=true;
+   iscss=false;
+   ists=false;
+   displayhtml(){
+     this.ishtml=true;
+     this.iscss=false;
+     this.ists=false;
+   }
+   displaycss(){
+     this.iscss=true;
+     this.ishtml=false;
+     this.ists=false;
+   }
+   displayts(){
+     this.ists=true;
+     this.ishtml=false;
+     this.iscss=false;
+   }
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    
+  }
+
+
+  ngOnInit(): void {
+  }
+
+}
+"}}
+</code>
+</pre>
+</lib-codedisplay>
