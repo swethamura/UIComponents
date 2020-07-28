@@ -1,0 +1,167 @@
+<div style="padding:50px"></div>
+<p>Sales</p>
+<input type="text" [(ngModel)]="sales">
+
+<p>Visitors</p>
+<input type="text" [(ngModel)]="visitors">
+
+<p>Revenue</p>
+<input type="text" [(ngModel)]="revenue">
+
+<p>Subscribers</p>
+<input type="text" [(ngModel)]="subscribers">
+
+<div style="padding:50px"></div>
+<table class="sample"style="border-collapse:collapse;border:solid black 2px;">
+<tr class="sample">
+<td  style="background-color:darkturquoise"><button mat-fab [ngStyle]="{'color':'white'}" style="width : 50px ;height:50px;margin-top:10px;margin-bottom:10px">
+    <mat-icon [ngStyle]="{'color':'darkturquoise'}">shopping_cart</mat-icon>
+</button>
+<td style="background-color:darkturquoise;padding-left:50px;color:white">{{sales}}<mat-icon [ngStyle]="{'color':'white'}">arrow_upward</mat-icon><br>
+Sales
+</td>
+<td style="background-color:turquoise"><button mat-fab><mat-icon [ngStyle]="{'color':'turquoise'}">visibility</mat-icon></button>
+<td style="background-color:turquoise;padding-left:50px;color:white">
+{{visitors}}
+<mat-icon [ngStyle]="{'color':'white'}">arrow_upward</mat-icon><br>Visitors
+</td>
+</tr>
+<tr class="sample">
+<td  style="background-color:darkorange"><button mat-fab><mat-icon [ngStyle]="{'color':'darkorange'}">monetization_on</mat-icon></button>
+<td style="background-color:darkorange;padding-left:50px;color:white">
+{{revenue}}<mat-icon [ngStyle]="{'color':'white'}">arrow_upward</mat-icon><br>
+Revenue
+</td>
+<td  style="background-color:cadetblue"><button mat-fab><mat-icon [ngStyle]="{'color':'cadetblue'}">people</mat-icon></button>
+<td style="background-color:cadetblue;padding-left:50px;color:white">
+{{subscribers}}<mat-icon [ngStyle]="{'color':'white'}">arrow_downward</mat-icon><br>
+Subscribers
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+<lib-codedisplay>
+<pre class="htmlcode">
+<code>
+&lt;div style="padding:50px"&gt;&lt;/div&gt;
+&lt;p&gt;Sales&lt;/p&gt;
+&lt;input type="text" [(ngModel)]="sales"&gt;
+
+&lt;p&gt;Visitors&lt;/p&gt;
+&lt;input type="text" [(ngModel)]="visitors"&gt;
+
+&lt;p&gt;Revenue&lt;/p&gt;
+&lt;input type="text" [(ngModel)]="revenue"&gt;
+
+&lt;p&gt;Subscribers&lt;/p&gt;
+&lt;input type="text" [(ngModel)]="subscribers"&gt;
+
+&lt;div style="padding:50px"&gt;&lt;/div&gt;
+&lt;table class="sample"style="border-collapse:collapse;border:solid black 2px;"&gt;
+&lt;tr class="sample"&gt;
+&lt;td  style="background-color:darkturquoise"&gt;&lt;button mat-fab [ngStyle]="{'color':'white'}" style="width : 50px ;height:50px;margin-top:10px;margin-bottom:10px"&gt;
+    &lt;mat-icon [ngStyle]="{'color':'darkturquoise'}"&gt;shopping_cart&lt;/mat-icon&gt;
+&lt;/button&gt;
+&lt;td style="background-color:darkturquoise;padding-left:50px;color:white"&gt;{{sales}}&lt;mat-icon [ngStyle]="{'color':'white'}"&gt;arrow_upward&lt;/mat-icon&gt;&lt;br&gt;
+Sales
+&lt;/td&gt;
+&lt;td style="background-color:turquoise"&gt;&lt;button mat-fab&gt;&lt;mat-icon [ngStyle]="{'color':'turquoise'}"&gt;visibility&lt;/mat-icon&gt;&lt;/button&gt;
+&lt;td style="background-color:turquoise;padding-left:50px;color:white"&gt;
+{{visitors}}
+&lt;mat-icon [ngStyle]="{'color':'white'}"&gt;arrow_upward&lt;/mat-icon&gt;&lt;br&gt;Visitors
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="sample"&gt;
+&lt;td  style="background-color:darkorange"&gt;&lt;button mat-fab&gt;&lt;mat-icon [ngStyle]="{'color':'darkorange'}"&gt;monetization_on&lt;/mat-icon&gt;&lt;/button&gt;
+&lt;td style="background-color:darkorange;padding-left:50px;color:white"&gt;
+{{revenue}}&lt;mat-icon [ngStyle]="{'color':'white'}"&gt;arrow_upward&lt;/mat-icon&gt;&lt;br&gt;
+Revenue
+&lt;/td&gt;
+&lt;td  style="background-color:cadetblue"&gt;&lt;button mat-fab&gt;&lt;mat-icon [ngStyle]="{'color':'cadetblue'}"&gt;people&lt;/mat-icon&gt;&lt;/button&gt;
+&lt;td style="background-color:cadetblue;padding-left:50px;color:white"&gt;
+{{subscribers}}&lt;mat-icon [ngStyle]="{'color':'white'}"&gt;arrow_downward&lt;/mat-icon&gt;&lt;br&gt;
+Subscribers
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+
+</code>
+</pre>
+
+<pre class="css">
+<code>
+{{"#sales{
+    background-color: darkturquoise;
+    border-radius: 5px;     
+}
+.data{
+    text-align: left;
+    color: white; 
+    font-size: small;
+    padding-left: 50px;
+}
+.visitors{
+    background-color: turquoise;
+    border-radius: 5px;
+}
+.revenue{
+    background-color: darkorange;
+    border-radius: 5px;
+}
+.subscribers{
+    background-color: cadetblue;
+    border-radius: 5px;
+}
+.full{
+    background-color: lightsteelblue;
+    border-radius: 5px;
+    table-layout:fixed;
+}
+button{
+    width : 50px ;
+    height:50px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.sample{
+    border : solid lightsteelblue 5px;
+    border-collapse: collapse;
+    border-radius: 5px;
+    padding : 20px;
+}"}}
+</code>
+</pre>
+
+<pre class="ts">
+<code>
+{{"import { Component, OnInit, Input } from '@angular/core';
+
+@Component({
+  selector: 'lib-saleslib',
+  templateUrl: './saleslib.component.html',
+  styleUrls: ['./saleslib.component.css'
+  ]
+})
+export class SaleslibComponent implements OnInit {
+
+  constructor() { }
+  sales="";
+  revenue="";
+  subscribers="";
+  visitors="";
+
+  ngOnInit(): void {
+  }
+
+}
+"}}
+</code>
+</pre>
+</lib-codedisplay>
